@@ -9,10 +9,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       fanId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        reference: {
+          model: 'Fans'
+        },
+        onDelete: 'CASCADE',
+        allowNull: false,
+        hook: true
       },
       playerId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        reference: {
+          model: 'Players'
+        },
+        onDelete: 'CASCADE',
+        allowNull: false,
+        hook: true
       },
       createdAt: {
         allowNull: false,

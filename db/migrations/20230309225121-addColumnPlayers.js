@@ -11,11 +11,11 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
     await queryInterface.addColumn('Players', 'currentTeamId', {
-      type: sequelize.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: true,
       reference: { model: 'Teams'},
-      onDelete: 'CASCADE',
-      hook:true
+      // onDelete: 'CASCADE',
+      // hook:true
     })
   },
 
